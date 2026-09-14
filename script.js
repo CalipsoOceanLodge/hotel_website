@@ -1,83 +1,92 @@
-/* =========================
-   MOBILE MENU
-========================= */
+```javascript
+// MOBILE MENU
 
-const menuToggle = document.getElementById("menu-toggle");
-const mainNav = document.getElementById("main-nav");
+const menuToggle = document.querySelector(".menu-toggle");
+const mainNav = document.querySelector(".main-nav");
 
-menuToggle.addEventListener("click", () => {
-    mainNav.classList.toggle("open");
-});
+if (menuToggle && mainNav) {
+    menuToggle.addEventListener("click", () => {
+        mainNav.classList.toggle("open");
+    });
+}
 
 document.querySelectorAll(".main-nav a").forEach(link => {
     link.addEventListener("click", () => {
-        mainNav.classList.remove("open");
+        mainNav?.classList.remove("open");
     });
 });
 
 
-/* =========================
-   DARK MODE
-========================= */
+// DARK MODE
 
-const themeToggle = document.getElementById("theme-toggle");
+const themeToggle = document.querySelector("#theme-toggle");
 
-const savedTheme = localStorage.getItem("calipso-theme");
+if (themeToggle) {
+    const savedTheme = localStorage.getItem("calipso-theme");
 
-if (savedTheme === "dark") {
-    document.body.classList.add("dark");
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark");
+    }
+
+    themeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+
+        localStorage.setItem(
+            "calipso-theme",
+            document.body.classList.contains("dark") ? "dark" : "light"
+        );
+    });
 }
 
-function updateThemeIcon() {
-    themeToggle.textContent = document.body.classList.contains("dark")
-        ? "☀"
-        : "☾";
-}
 
-updateThemeIcon();
+// LANGUAGE TOGGLE
 
-themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
+const languageToggle = document.querySelector("#language-toggle");
 
-    const theme = document.body.classList.contains("dark")
-        ? "dark"
-        : "light";
+if (languageToggle) {
+    const savedLanguage = localStorage.getItem("calipso-language") || "en";
 
-    localStorage.setItem("calipso-theme", theme);
-    updateThemeIcon();
-});
+    function setLanguage(language) {
+        document.querySelectorAll("[data-en]").forEach(element => {
+            if (language === "en") {
+                element.textContent = element.dataset.en;
+            } else if (element.dataset.es) {
+                element.textContent = element.dataset.es;
+            }
+        });
 
+        languageToggle.textContent = language === "en" ? "ES" : "EN";
+        localStorage.setItem("calipso-language", language);
+    }
 
-/* =========================
-   LANGUAGE
-========================= */
+    languageToggle.addEventListener("click", () => {
+        const currentLanguage =
+            localStorage.getItem("calipso-language") || "en";
 
-const languageToggle = document.getElementById("language-toggle");
-
-let currentLanguage = localStorage.getItem("calipso-language") || "en";
-
-function updateLanguage() {
-    document.documentElement.lang = currentLanguage;
-
-    document.querySelectorAll("[data-en]").forEach(element => {
-        element.textContent = element.dataset[currentLanguage];
+        setLanguage(currentLanguage === "en" ? "es" : "en");
     });
 
-    languageToggle.textContent = currentLanguage === "en" ? "ES" : "EN";
+    setLanguage(savedLanguage);
 }
 
-updateLanguage();
 
-languageToggle.addEventListener("click", () => {
-    currentLanguage = currentLanguage === "en" ? "es" : "en";
-    localStorage.setItem("calipso-language", currentLanguage);
-    updateLanguage();
+// OCTORATE BOOKING BUTTONS
+
+document.querySelectorAll(".booking-trigger").forEach(button => {
+    button.addEventListener("click", () => {
+        const bookingSection = document.querySelector("#octorate-booking");
+
+        if (bookingSection) {
+            bookingSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+    });
 });
 
 
-/* =========================
-   GALLERIES
-========================= */
+// GALLERIES
 
 const galleries = {
     property: [
@@ -114,90 +123,125 @@ const galleries = {
 };
 
 
-const lightbox = document.getElementById("lightbox");
-const lightboxImage = document.getElementById("lightbox-image");
-const lightboxCounter = document.getElementById("lightbox-counter");
-const lightboxClose = document.getElementById("lightbox-close");
-const lightboxPrev = document.getElementById("lightbox-prev");
-const lightboxNext = document.getElementById("lightbox-next");
+// LIGHTBOX
 
-let currentGallery = [];
+const lightbox = document.querySelector(".lightbox");
+const lightboxImage = document.querySelector(".lightbox-content img");
+const lightboxCounter = document.querySelector(".lightbox-counter");
+const lightboxClose = document.querySelector(".lightbox-close");
+const lightboxPrev = document.querySelector(".lightbox-prev");
+const lightboxNext = document.querySelector(".lightbox-next");
+
+let currentGallery = null;
 let currentIndex = 0;
 
+function openLightbox(galleryName, index) {
+    if (!lightbox || !lightboxImage || !galleries[galleryName]) {
+        return;
+    }
 
-function showImage(index) {
+    currentGallery = galleryName;
     currentIndex = index;
 
-    lightboxImage.src = currentGallery[currentIndex];
-
-    lightboxCounter.textContent =
-        `${currentIndex + 1} / ${currentGallery.length}`;
-}
-
-
-function openLightbox(galleryName, index) {
-    currentGallery = galleries[galleryName];
-    showImage(index);
+    updateLightbox();
 
     lightbox.classList.add("active");
-    lightbox.setAttribute("aria-hidden", "false");
-
     document.body.style.overflow = "hidden";
 }
 
+function updateLightbox() {
+    const images = galleries[currentGallery];
+
+    if (!images) {
+        return;
+    }
+
+    lightboxImage.src = images[currentIndex];
+
+    if (lightboxCounter) {
+        lightboxCounter.textContent =
+            `${currentIndex + 1} / ${images.length}`;
+    }
+}
 
 function closeLightbox() {
-    lightbox.classList.remove("active");
-    lightbox.setAttribute("aria-hidden", "true");
+    if (!lightbox) {
+        return;
+    }
 
+    lightbox.classList.remove("active");
     document.body.style.overflow = "";
 }
 
+function showPrevious() {
+    if (!currentGallery) {
+        return;
+    }
 
-document.querySelectorAll(".gallery-item").forEach(item => {
+    const images = galleries[currentGallery];
+
+    currentIndex =
+        (currentIndex - 1 + images.length) % images.length;
+
+    updateLightbox();
+}
+
+function showNext() {
+    if (!currentGallery) {
+        return;
+    }
+
+    const images = galleries[currentGallery];
+
+    currentIndex =
+        (currentIndex + 1) % images.length;
+
+    updateLightbox();
+}
+
+
+// GALLERY THUMBNAILS
+
+document.querySelectorAll("[data-gallery]").forEach(item => {
     item.addEventListener("click", () => {
         const galleryName = item.dataset.gallery;
-        const index = Number(item.dataset.index);
+        const index = Number(item.dataset.index) || 0;
 
         openLightbox(galleryName, index);
     });
 });
 
 
-lightboxClose.addEventListener("click", closeLightbox);
+// VIEW FULL GALLERY LINKS
 
-lightboxPrev.addEventListener("click", () => {
-    const newIndex =
-        (currentIndex - 1 + currentGallery.length) %
-        currentGallery.length;
+document.querySelectorAll(".gallery-view-link").forEach(link => {
+    link.addEventListener("click", () => {
+        const galleryName = link.dataset.gallery;
 
-    showImage(newIndex);
+        if (galleryName && galleries[galleryName]) {
+            openLightbox(galleryName, 0);
+        }
+    });
 });
 
 
-lightboxNext.addEventListener("click", () => {
-    const newIndex =
-        (currentIndex + 1) %
-        currentGallery.length;
+// LIGHTBOX CONTROLS
 
-    showImage(newIndex);
-});
+lightboxClose?.addEventListener("click", closeLightbox);
+lightboxPrev?.addEventListener("click", showPrevious);
+lightboxNext?.addEventListener("click", showNext);
 
-
-lightbox.addEventListener("click", event => {
+lightbox?.addEventListener("click", event => {
     if (event.target === lightbox) {
         closeLightbox();
     }
 });
 
 
-/* =========================
-   KEYBOARD CONTROLS
-========================= */
+// KEYBOARD CONTROLS
 
 document.addEventListener("keydown", event => {
-
-    if (!lightbox.classList.contains("active")) {
+    if (!lightbox?.classList.contains("active")) {
         return;
     }
 
@@ -206,38 +250,37 @@ document.addEventListener("keydown", event => {
     }
 
     if (event.key === "ArrowLeft") {
-        lightboxPrev.click();
+        showPrevious();
     }
 
     if (event.key === "ArrowRight") {
-        lightboxNext.click();
+        showNext();
     }
 });
 
 
-/* =========================
-   TOUCH SWIPE
-========================= */
+// TOUCH SWIPE
 
 let touchStartX = 0;
+let touchEndX = 0;
 
-lightbox.addEventListener("touchstart", event => {
+lightbox?.addEventListener("touchstart", event => {
     touchStartX = event.changedTouches[0].screenX;
 });
 
+lightbox?.addEventListener("touchend", event => {
+    touchEndX = event.changedTouches[0].screenX;
 
-lightbox.addEventListener("touchend", event => {
+    const distance = touchEndX - touchStartX;
 
-    const touchEndX = event.changedTouches[0].screenX;
-    const difference = touchStartX - touchEndX;
-
-    if (Math.abs(difference) < 50) {
+    if (Math.abs(distance) < 50) {
         return;
     }
 
-    if (difference > 0) {
-        lightboxNext.click();
+    if (distance > 0) {
+        showPrevious();
     } else {
-        lightboxPrev.click();
+        showNext();
     }
 });
+```
