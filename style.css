@@ -15,7 +15,6 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 100px;
 }
 
 body {
@@ -24,7 +23,7 @@ body {
     background: var(--bg);
     color: var(--text);
     line-height: 1.65;
-    font-size: clamp(1rem, 0.95rem + 0.18vw, 1.1rem);
+    font-size: clamp(16px, 0.95vw, 18px);
 }
 
 body.dark {
@@ -104,7 +103,7 @@ body.dark .footer-logo-light {
 }
 
 .main-nav a {
-    font-size: clamp(0.86rem, 0.78rem + 0.15vw, 1rem);
+    font-size: clamp(0.88rem, 0.82rem + 0.15vw, 1rem);
     letter-spacing: 0.08em;
     text-transform: uppercase;
     white-space: nowrap;
@@ -139,7 +138,7 @@ body.dark .footer-logo-light {
 }
 
 #language-toggle {
-    font-size: clamp(0.78rem, 0.72rem + 0.1vw, 0.9rem);
+    font-size: 0.8rem;
     letter-spacing: 0.08em;
 }
 
@@ -192,7 +191,7 @@ body.dark .footer-logo-light {
 
 .eyebrow {
     margin: 0 0 18px;
-    font-size: clamp(0.78rem, 0.7rem + 0.18vw, 0.95rem);
+    font-size: clamp(0.78rem, 0.72rem + 0.18vw, 0.95rem);
     letter-spacing: 0.18em;
     font-weight: bold;
 }
@@ -205,36 +204,6 @@ body.dark .footer-logo-light {
 .hero-text {
     font-size: clamp(1.1rem, 2vw, 1.5rem);
     margin: 0 auto 30px;
-}
-
-
-/* HERO QUICK LINKS */
-
-.quick-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: clamp(18px, 2.5vw, 32px);
-    margin-top: 24px;
-}
-
-.quick-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    font-size: clamp(0.78rem, 0.72rem + 0.12vw, 0.9rem);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    transition: opacity 0.2s ease;
-}
-
-.quick-link:hover {
-    opacity: 0.55;
-}
-
-.quick-link-icon {
-    font-size: 0.95rem;
 }
 
 
@@ -289,7 +258,7 @@ body.dark .footer-logo-light {
     margin-top: 15px;
     padding: 13px 22px;
     border: 1px solid var(--text);
-    font-size: clamp(0.78rem, 0.72rem + 0.12vw, 0.9rem);
+    font-size: 0.82rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     transition: 0.2s ease;
@@ -311,21 +280,6 @@ body.dark .footer-logo-light {
 }
 
 
-/* ABOUT SUBSECTIONS */
-
-.about-subsection {
-    margin-bottom: clamp(80px, 10vw, 150px);
-}
-
-.about-subsection:last-child {
-    margin-bottom: 0;
-}
-
-.about-subsection .section-heading {
-    margin-bottom: 45px;
-}
-
-
 /* PHOTO GRIDS */
 
 .photo-grid {
@@ -334,27 +288,8 @@ body.dark .footer-logo-light {
     gap: 12px;
 }
 
-/*
-   3 images:
-   [          long          ]
-   [ square ] [   square   ]
-
-   The default first-image span creates this layout.
-*/
-
 .photo-grid .gallery-item:first-child {
     grid-column: span 2;
-}
-
-/*
-   1, 2 and 4 image galleries:
-   all images remain equal-width squares.
-*/
-
-.photo-grid:has(.gallery-item:only-child) .gallery-item:first-child,
-.photo-grid:has(.gallery-item:nth-child(2):last-child) .gallery-item:first-child,
-.photo-grid:has(.gallery-item:nth-child(4):last-child) .gallery-item:first-child {
-    grid-column: auto;
 }
 
 .gallery-item {
@@ -377,14 +312,11 @@ body.dark .footer-logo-light {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition:
-        transform 0.5s ease,
-        filter 0.5s ease;
+    transition: transform 0.5s ease;
 }
 
 .gallery-item:hover img {
     transform: scale(1.035);
-    filter: brightness(0.93);
 }
 
 
@@ -430,7 +362,7 @@ body.dark .footer-logo-light {
     text-align: center;
     color: var(--muted);
     margin: 25px 0 0;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
 }
 
 
@@ -471,7 +403,7 @@ body.dark .footer-logo-light {
 .text-link {
     display: inline-block;
     margin-top: 10px;
-    font-size: clamp(0.8rem, 0.74rem + 0.12vw, 0.92rem);
+    font-size: 0.85rem;
     letter-spacing: 0.06em;
 }
 
@@ -533,7 +465,7 @@ body.dark .footer-logo-light {
     display: flex;
     align-items: center;
     gap: 15px;
-    font-size: clamp(1rem, 0.94rem + 0.15vw, 1.1rem);
+    font-size: 1.05rem;
 }
 
 .contact-link:hover {
@@ -554,7 +486,7 @@ body.dark .footer-logo-light {
 }
 
 .contact-detail strong {
-    font-size: clamp(0.76rem, 0.7rem + 0.12vw, 0.88rem);
+    font-size: 0.76rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
 }
@@ -590,7 +522,7 @@ body.dark .footer-logo-light {
     padding: 10px 14px;
     background: var(--bg);
     color: var(--text);
-    font-size: clamp(0.76rem, 0.7rem + 0.12vw, 0.88rem);
+    font-size: 0.78rem;
     letter-spacing: 0.06em;
 }
 
@@ -606,7 +538,7 @@ body.dark .footer-logo-light {
     justify-content: center;
     gap: 10px;
     color: var(--muted);
-    font-size: clamp(0.78rem, 0.72rem + 0.1vw, 0.88rem);
+    font-size: 0.8rem;
     text-align: center;
 }
 
@@ -710,10 +642,6 @@ body.dark .footer-logo-light {
 
 @media (max-width: 900px) {
 
-    html {
-        scroll-padding-top: 80px;
-    }
-
     .site-header {
         padding: 12px 5vw;
     }
@@ -760,16 +688,6 @@ body.dark .footer-logo-light {
         order: initial;
     }
 
-    /*
-       Keep photo previews as 2 columns on mobile.
-       This prevents the 2x2 and long + two layouts
-       from collapsing into a single column.
-    */
-
-    .photo-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
     .full-gallery {
         grid-template-columns: repeat(2, 1fr);
         grid-auto-rows: 240px;
@@ -784,27 +702,10 @@ body.dark .footer-logo-light {
         flex-direction: column;
         align-items: flex-start;
     }
-
-    .hero {
-        align-items: center;
-    }
-
-    .hero-image {
-        transform: translateY(3%);
-        height: 103%;
-    }
-
-    .quick-links {
-        gap: 16px 22px;
-    }
 }
 
 
 @media (max-width: 600px) {
-
-    html {
-        scroll-padding-top: 75px;
-    }
 
     .logo {
         width: 95px;
@@ -812,23 +713,6 @@ body.dark .footer-logo-light {
 
     .hero-logo {
         width: 75vw;
-    }
-
-    .hero-content {
-        width: 92%;
-    }
-
-    .hero-text {
-        font-size: 1.05rem;
-    }
-
-    .quick-links {
-        gap: 13px 18px;
-        margin-top: 20px;
-    }
-
-    .quick-link {
-        font-size: 0.75rem;
     }
 
     .section {
@@ -853,25 +737,15 @@ body.dark .footer-logo-light {
         height: 300px;
     }
 
-    /*
-       Three-photo previews stay:
-       [       long       ]
-       [ square ] [square]
-
-       Four-photo previews stay:
-       [square] [square]
-       [square] [square]
-    */
-
     .full-gallery {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 210px;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 280px;
         gap: 8px;
     }
 
     .full-gallery .gallery-item,
     .full-gallery .large {
-        height: 210px;
+        height: 280px;
     }
 
     .retreat-content {
