@@ -23,7 +23,6 @@ body {
     background: var(--bg);
     color: var(--text);
     line-height: 1.65;
-    font-size: clamp(16px, 0.95vw, 18px);
 }
 
 body.dark {
@@ -103,7 +102,7 @@ body.dark .footer-logo-light {
 }
 
 .main-nav a {
-    font-size: clamp(0.88rem, 0.82rem + 0.15vw, 1rem);
+    font-size: 0.82rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     white-space: nowrap;
@@ -138,7 +137,7 @@ body.dark .footer-logo-light {
 }
 
 #language-toggle {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     letter-spacing: 0.08em;
 }
 
@@ -191,7 +190,7 @@ body.dark .footer-logo-light {
 
 .eyebrow {
     margin: 0 0 18px;
-    font-size: clamp(0.78rem, 0.72rem + 0.18vw, 0.95rem);
+    font-size: 0.72rem;
     letter-spacing: 0.18em;
     font-weight: bold;
 }
@@ -258,7 +257,7 @@ body.dark .footer-logo-light {
     margin-top: 15px;
     padding: 13px 22px;
     border: 1px solid var(--text);
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     transition: 0.2s ease;
@@ -362,7 +361,7 @@ body.dark .footer-logo-light {
     text-align: center;
     color: var(--muted);
     margin: 25px 0 0;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 
@@ -403,7 +402,7 @@ body.dark .footer-logo-light {
 .text-link {
     display: inline-block;
     margin-top: 10px;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     letter-spacing: 0.06em;
 }
 
@@ -465,7 +464,7 @@ body.dark .footer-logo-light {
     display: flex;
     align-items: center;
     gap: 15px;
-    font-size: 1.05rem;
+    font-size: 1rem;
 }
 
 .contact-link:hover {
@@ -486,7 +485,7 @@ body.dark .footer-logo-light {
 }
 
 .contact-detail strong {
-    font-size: 0.76rem;
+    font-size: 0.72rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
 }
@@ -522,7 +521,7 @@ body.dark .footer-logo-light {
     padding: 10px 14px;
     background: var(--bg);
     color: var(--text);
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     letter-spacing: 0.06em;
 }
 
@@ -538,7 +537,7 @@ body.dark .footer-logo-light {
     justify-content: center;
     gap: 10px;
     color: var(--muted);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     text-align: center;
 }
 
@@ -666,7 +665,6 @@ body.dark .footer-logo-light {
     .main-nav a {
         padding: 16px 5vw;
         border-top: 1px solid var(--line);
-        font-size: 0.9rem;
     }
 
     .nav-book {
