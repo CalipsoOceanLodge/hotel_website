@@ -1,110 +1,416 @@
-```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calipso Ocean Lodge - A peaceful 6-room eco-friendly jungle lodge near Playa Avellanas, Guanacaste, Costa Rica.">
+    <title>Calipso Ocean Lodge | Playa Avellanas, Costa Rica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <a href="#home" class="brand">
+        <img src="images/logo_black.png" alt="Calipso Ocean Lodge" class="logo logo-dark">
+        <img src="images/logo_white.png" alt="Calipso Ocean Lodge" class="logo logo-light">
+    </a>
+
+    <nav class="main-nav" id="main-nav">
+        <a href="#about" data-en="About" data-es="Nosotros">About</a>
+        <a href="#rooms" data-en="Rooms" data-es="Habitaciones">Rooms</a>
+        <a href="#retreats" data-en="Retreats" data-es="Retiros">Retreats</a>
+        <a href="#explore" data-en="Explore" data-es="Explorar">Explore</a>
+        <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+        <a href="https://www.booking.com/hotel/cr/tranqui-funkey.html"
+           target="_blank"
+           rel="noopener"
+           class="nav-book"
+           data-en="Book Now"
+           data-es="Reservar">
+            Book Now
+        </a>
+    </nav>
+
+    <div class="header-tools">
+        <button id="language-toggle" aria-label="Change language">ES</button>
+        <button id="theme-toggle" aria-label="Toggle light and dark mode">☾</button>
+        <button id="menu-toggle" class="menu-toggle" aria-label="Open menu">☰</button>
+    </div>
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <img src="images/hotel_hero.jpg" alt="Calipso Ocean Lodge" class="hero-image">
+
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <p class="eyebrow"
+                   data-en="PLAYA AVELLANAS · GUANACASTE · COSTA RICA"
+                   data-es="PLAYA AVELLANAS · GUANACASTE · COSTA RICA">
+                    PLAYA AVELLANAS · GUANACASTE · COSTA RICA
+                </p>
+
+                <img src="images/logo_white.png"
+                     alt="Calipso Ocean Lodge"
+                     class="hero-logo">
+
+                <p class="hero-text"
+                   data-en="Your own piece of paradise, close to everything."
+                   data-es="Tu propio pedacito de paraíso, cerca de todo.">
+                    Your own piece of paradise, close to everything.
+                </p>
+
+                <a href="https://www.booking.com/hotel/cr/tranqui-funkey.html"
+                   target="_blank"
+                   rel="noopener"
+                   class="button button-light"
+                   data-en="Book Your Stay"
+                   data-es="Reserva tu estadía">
+                    Book Your Stay
+                </a>
+            </div>
+        </div>
+    </section>
+
+
     <!-- ABOUT -->
     <section id="about" class="section">
-
-        <!-- ABOUT CALIPSO -->
-        <div class="about-subsection">
-
-            <div class="section-heading">
-
+        <div class="section-grid">
+            <div class="section-text">
                 <p class="eyebrow"
                    data-en="WELCOME TO CALIPSO"
                    data-es="BIENVENIDO A CALIPSO">
                     WELCOME TO CALIPSO
                 </p>
 
-                <h2 data-en="About Calipso Ocean Lodge"
-                    data-es="Sobre Calipso Ocean Lodge">
-                    About Calipso Ocean Lodge
+                <h2 data-en="About Calipso"
+                    data-es="Sobre Calipso">
+                    About Calipso
                 </h2>
 
-            </div>
-
-            <div class="section-text">
-
                 <p data-en="Nestled in the lush surroundings of Playa Avellana in Guanacaste, Costa Rica, this charming 6-room eco-friendly jungle lodge offers a peaceful and intimate tropical escape. Located just a 7-minute walk (approximately 550–700 meters) from beautiful Avellanas Beach, an uncrowded gem with surf breaks for all levels."
-                   data-es="Ubicado entre la exuberante naturaleza de Playa Avellana, Guanacaste, Costa Rica, este encantador lodge ecológico de 6 habitaciones ofrece una escapada tropical tranquila e íntima. Se encuentra a solo 7 minutos a pie (aproximadamente 550–700 metros) de la hermosa Playa Avellanas, una joya poco concurrida con olas para todos los niveles.">
+                   data-es="Ubicado entre la exuberante naturaleza de Playa Avellanas, Guanacaste, Costa Rica, este encantador lodge ecológico de 6 habitaciones ofrece una escapada tropical tranquila e íntima. Se encuentra a solo 7 minutos a pie (aproximadamente 550–700 metros) de la hermosa Playa Avellanas, una joya poco concurrida con olas para todos los niveles.">
                     Nestled in the lush surroundings of Playa Avellana in Guanacaste, Costa Rica, this charming 6-room eco-friendly jungle lodge offers a peaceful and intimate tropical escape. Located just a 7-minute walk (approximately 550–700 meters) from beautiful Avellanas Beach, an uncrowded gem with surf breaks for all levels.
                 </p>
 
-            </div>
-
-        </div>
-
-
-        <!-- THE LODGE -->
-        <div class="about-subsection">
-
-            <div class="section-heading">
-
-                <p class="eyebrow"
-                   data-en="THE LODGE"
-                   data-es="EL LODGE">
-                    THE LODGE
+                <p data-en="The lodge features an outdoor swimming pool, pool bar, tranquil garden area, and a dedicated yoga deck—perfect for morning practice, relaxation, and enjoying the surrounding nature."
+                   data-es="El lodge cuenta con una piscina al aire libre, bar junto a la piscina, un tranquilo jardín y una terraza dedicada al yoga, perfecta para practicar por la mañana, relajarse y disfrutar de la naturaleza.">
+                    The lodge features an outdoor swimming pool, pool bar, tranquil garden area, and a dedicated yoga deck—perfect for morning practice, relaxation, and enjoying the surrounding nature.
                 </p>
 
-                <h2 data-en="The Lodge"
-                    data-es="El Lodge">
-                    The Lodge
+                <p data-en="The property also offers a fully equipped outdoor shared kitchen with all essential amenities, giving guests the flexibility to prepare their own meals. Conveniently located along the main road, the lodge is within walking distance of local restaurants and bars. Our property is quiet, safe and secure. Close to everything, yet your own piece of paradise. Liberia International Airport is about 1.5 hours by car, making the lodge an ideal base for enjoying all the best of what Guanacaste has to offer."
+                   data-es="La propiedad también cuenta con una cocina compartida al aire libre totalmente equipada con todo lo necesario para preparar tus propias comidas. Ubicado convenientemente junto a la carretera principal, el lodge está a poca distancia a pie de restaurantes y bares locales. Nuestra propiedad es tranquila, segura y protegida. Cerca de todo, pero tu propio pedacito de paraíso. El Aeropuerto Internacional de Liberia está aproximadamente a 1.5 horas en automóvil.">
+                    The property also offers a fully equipped outdoor shared kitchen with all essential amenities, giving guests the flexibility to prepare their own meals. Conveniently located along the main road, the lodge is within walking distance of local restaurants and bars. Our property is quiet, safe and secure. Close to everything, yet your own piece of paradise. Liberia International Airport is about 1.5 hours by car, making the lodge an ideal base for enjoying all the best of what Guanacaste has to offer.
+                </p>
+            </div>
+
+            <div class="photo-grid property-preview">
+                <button class="gallery-item" data-gallery="property" data-index="0">
+                    <img src="images/hotel_01.jpg" alt="Calipso Ocean Lodge">
+                </button>
+                <button class="gallery-item" data-gallery="property" data-index="1">
+                    <img src="images/hotel_02.jpg" alt="Calipso Ocean Lodge">
+                </button>
+                <button class="gallery-item tall" data-gallery="property" data-index="2">
+                    <img src="images/hotel_03.jpg" alt="Calipso Ocean Lodge">
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PROPERTY GALLERY -->
+    <section class="gallery-section">
+        <div class="section-heading">
+            <p class="eyebrow"
+               data-en="THE LODGE"
+               data-es="EL LODGE">
+                THE LODGE
+            </p>
+
+            <h2 data-en="The Lodge"
+                data-es="El Lodge">
+                The Lodge
+            </h2>
+        </div>
+
+        <div class="full-gallery property-gallery">
+
+            <button class="gallery-item large" data-gallery="property" data-index="3">
+                <img src="images/hotel_04.jpg" alt="Calipso Ocean Lodge">
+            </button>
+
+            <button class="gallery-item" data-gallery="property" data-index="4">
+                <img src="images/hotel_05.jpg" alt="Calipso Ocean Lodge">
+            </button>
+
+            <button class="gallery-item" data-gallery="property" data-index="5">
+                <img src="images/hotel_06.jpg" alt="Calipso Ocean Lodge">
+            </button>
+
+            <button class="gallery-item" data-gallery="property" data-index="6">
+                <img src="images/hotel_07.jpg" alt="Calipso Ocean Lodge">
+            </button>
+
+            <button class="gallery-item large" data-gallery="property" data-index="7">
+                <img src="images/hotel_08.jpg" alt="Calipso Ocean Lodge">
+            </button>
+
+            <button class="gallery-item" data-gallery="property" data-index="8">
+                <img src="images/hotel_09.jpg" alt="Calipso Ocean Lodge">
+            </button>
+
+            <button class="gallery-item" data-gallery="property" data-index="9">
+                <img src="images/hotel_10.jpg" alt="Calipso Ocean Lodge">
+            </button>
+
+            <button class="gallery-item" data-gallery="property" data-index="10">
+                <img src="images/hotel_11.jpg" alt="Calipso Ocean Lodge">
+            </button>
+
+            <button class="gallery-item" data-gallery="property" data-index="11">
+                <img src="images/hotel_12.jpg" alt="Calipso Ocean Lodge">
+            </button>
+
+            <button class="gallery-item" data-gallery="property" data-index="12">
+                <img src="images/hotel_13.jpg" alt="Calipso Ocean Lodge">
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- ROOMS -->
+    <section id="rooms" class="section section-alt">
+        <div class="section-grid reverse">
+
+            <div class="section-text">
+                <p class="eyebrow"
+                   data-en="STAY A WHILE"
+                   data-es="QUÉDATE UN TIEMPO">
+                    STAY A WHILE
+                </p>
+
+                <h2 data-en="Our Rooms"
+                    data-es="Nuestras Habitaciones">
+                    Our Rooms
                 </h2>
 
+                <p data-en="Our comfortable rooms provide the perfect place to relax and recharge after a day of surfing, yoga, exploring, or enjoying the beautiful beaches of Guanacaste. Each room features a private bathroom with a shower and hot water, as well as its own private patio with a hammock and chairs—ideal for unwinding in the peaceful surroundings."
+                   data-es="Nuestras cómodas habitaciones son el lugar perfecto para descansar y recargar energías después de un día de surf, yoga, exploración o disfrutando de las hermosas playas de Guanacaste. Cada habitación cuenta con baño privado con ducha y agua caliente, además de su propio patio privado con hamaca y sillas.">
+                    Our comfortable rooms provide the perfect place to relax and recharge after a day of surfing, yoga, exploring, or enjoying the beautiful beaches of Guanacaste. Each room features a private bathroom with a shower and hot water, as well as its own private patio with a hammock and chairs—ideal for unwinding in the peaceful surroundings.
+                </p>
+
+                <p data-en="Guests can choose from rooms with or without air conditioning, with a variety of configurations including queen beds, single beds, and a family room to accommodate different needs. Fast and reliable Wi-Fi is also available throughout the property, allowing you to stay connected while enjoying your tropical getaway."
+                   data-es="Los huéspedes pueden elegir entre habitaciones con o sin aire acondicionado, con diferentes configuraciones que incluyen camas queen, camas individuales y una habitación familiar. También hay Wi-Fi rápido y confiable en toda la propiedad.">
+                    Guests can choose from rooms with or without air conditioning, with a variety of configurations including queen beds, single beds, and a family room to accommodate different needs. Fast and reliable Wi-Fi is also available throughout the property, allowing you to stay connected while enjoying your tropical getaway.
+                </p>
+
+                <a href="https://www.booking.com/hotel/cr/tranqui-funkey.html"
+                   target="_blank"
+                   rel="noopener"
+                   class="button"
+                   data-en="Check Availability"
+                   data-es="Ver disponibilidad">
+                    Check Availability
+                </a>
             </div>
 
-            <div class="section-grid">
+            <div class="photo-grid room-preview">
+                <button class="gallery-item" data-gallery="rooms" data-index="0">
+                    <img src="images/room_a.jpg" alt="Guest room at Calipso Ocean Lodge">
+                </button>
 
-                <div class="section-text">
+                <button class="gallery-item" data-gallery="rooms" data-index="1">
+                    <img src="images/room_b.jpg" alt="Guest room at Calipso Ocean Lodge">
+                </button>
 
-                    <p data-en="The lodge features an outdoor swimming pool, pool bar, tranquil garden area, and a dedicated yoga deck—perfect for morning practice, relaxation, and enjoying the surrounding nature."
-                       data-es="El lodge cuenta con una piscina al aire libre, bar junto a la piscina, un tranquilo jardín y una terraza dedicada al yoga, perfecta para practicar por la mañana, relajarse y disfrutar de la naturaleza.">
-                        The lodge features an outdoor swimming pool, pool bar, tranquil garden area, and a dedicated yoga deck—perfect for morning practice, relaxation, and enjoying the surrounding nature.
-                    </p>
-
-                    <p data-en="The property also offers a fully equipped outdoor shared kitchen with all essential amenities, giving guests the flexibility to prepare their own meals. Conveniently located along the main road, the lodge is within walking distance of local restaurants and bars. Our property is quiet, safe and secure. Close to everything, yet your own piece of paradise. Liberia International Airport is about 1.5 hours by car, making the lodge an ideal base for enjoying all the best of what Guanacaste has to offer."
-                       data-es="La propiedad también cuenta con una cocina compartida al aire libre totalmente equipada con todo lo necesario para preparar tus propias comidas. Ubicado convenientemente junto a la carretera principal, el lodge está a poca distancia a pie de restaurantes y bares locales. Nuestra propiedad es tranquila, segura y protegida. Cerca de todo, pero tu propio pedacito de paraíso. El Aeropuerto Internacional de Liberia está aproximadamente a 1.5 horas en automóvil.">
-                        The property also offers a fully equipped outdoor shared kitchen with all essential amenities, giving guests the flexibility to prepare their own meals. Conveniently located along the main road, the lodge is within walking distance of local restaurants and bars. Our property is quiet, safe and secure. Close to everything, yet your own piece of paradise. Liberia International Airport is about 1.5 hours by car, making the lodge an ideal base for enjoying all the best of what Guanacaste has to offer.
-                    </p>
-
-                </div>
-
-
-                <!-- PROPERTY PREVIEW -->
-                <div class="photo-grid property-preview">
-
-                    <button class="gallery-item"
-                            data-gallery="property"
-                            data-index="0">
-                        <img src="images/hotel_01.jpg" alt="Calipso Ocean Lodge">
-                    </button>
-
-                    <button class="gallery-item"
-                            data-gallery="property"
-                            data-index="1">
-                        <img src="images/hotel_02.jpg" alt="Calipso Ocean Lodge">
-                    </button>
-
-                    <button class="gallery-item"
-                            data-gallery="property"
-                            data-index="2">
-                        <img src="images/hotel_03.jpg" alt="Calipso Ocean Lodge">
-                    </button>
-
-                    <button class="gallery-item"
-                            data-gallery="property"
-                            data-index="3">
-                        <img src="images/hotel_04.jpg" alt="Calipso Ocean Lodge">
-                    </button>
-
-                </div>
-
+                <button class="gallery-item tall" data-gallery="rooms" data-index="2">
+                    <img src="images/room_c.jpg" alt="Guest room at Calipso Ocean Lodge">
+                </button>
             </div>
+
+        </div>
+    </section>
+
+
+    <!-- ROOM GALLERY -->
+    <section class="gallery-section">
+
+        <div class="section-heading">
+            <p class="eyebrow"
+               data-en="ROOMS"
+               data-es="HABITACIONES">
+                ROOMS
+            </p>
+
+            <h2 data-en="Rooms"
+                data-es="Habitaciones">
+                Rooms
+            </h2>
+        </div>
+
+        <div class="full-gallery room-gallery">
+
+            <button class="gallery-item large" data-gallery="rooms" data-index="3">
+                <img src="images/room_d.jpg" alt="Guest room at Calipso Ocean Lodge">
+            </button>
+
+            <button class="gallery-item" data-gallery="rooms" data-index="4">
+                <img src="images/room_e.jpg" alt="Guest room at Calipso Ocean Lodge">
+            </button>
+
+            <button class="gallery-item" data-gallery="rooms" data-index="5">
+                <img src="images/room_f.jpg" alt="Guest room at Calipso Ocean Lodge">
+            </button>
+
+            <button class="gallery-item" data-gallery="rooms" data-index="6">
+                <img src="images/room_g.jpg" alt="Guest room at Calipso Ocean Lodge">
+            </button>
+
+            <button class="gallery-item large" data-gallery="rooms" data-index="7">
+                <img src="images/room_h.jpg" alt="Guest room at Calipso Ocean Lodge">
+            </button>
+
+        </div>
+
+        <p class="gallery-note"
+           data-en="More room photos available in the gallery."
+           data-es="Más fotos de las habitaciones disponibles en la galería.">
+            More room photos available in the gallery.
+        </p>
+
+    </section>
+
+
+    <!-- RETREATS -->
+    <section id="retreats" class="section">
+
+        <div class="section-heading">
+
+            <p class="eyebrow"
+               data-en="PRIVATE GROUP EXPERIENCES"
+               data-es="EXPERIENCIAS PRIVADAS PARA GRUPOS">
+                PRIVATE GROUP EXPERIENCES
+            </p>
+
+            <h2 data-en="Private Retreats"
+                data-es="Retiros Privados">
+                Private Retreats
+            </h2>
+
+            <p class="heading-intro"
+               data-en="Create a personalized retreat experience by booking the entire property exclusively for your group."
+               data-es="Crea una experiencia personalizada reservando toda la propiedad exclusivamente para tu grupo.">
+                Create a personalized retreat experience by booking the entire property exclusively for your group.
+            </p>
 
         </div>
 
 
-        <!-- AROUND AVELLANAS -->
-        <div class="about-subsection">
+        <div class="retreat-grid">
 
-            <div class="section-heading">
+            <article class="retreat-card">
+
+                <button class="retreat-image gallery-item"
+                        data-gallery="activities"
+                        data-index="0">
+
+                    <img src="images/surf01.jpg"
+                         alt="Surfing near Playa Avellanas">
+
+                </button>
+
+                <div class="retreat-content">
+
+                    <h3 data-en="Surf Retreats"
+                        data-es="Retiros de Surf">
+                        Surf Retreats
+                    </h3>
+
+                    <p data-en="Plan a private surf getaway with your group, with options for guided surf sessions, customized meals, local excursions, and a relaxed tropical home base just minutes from the beach."
+                       data-es="Planifica una escapada privada de surf con tu grupo, con opciones de sesiones guiadas, comidas personalizadas, excursiones locales y un tranquilo hogar tropical a pocos minutos de la playa.">
+                        Plan a private surf getaway with your group, with options for guided surf sessions, customized meals, local excursions, and a relaxed tropical home base just minutes from the beach.
+                    </p>
+
+                    <a href="docs/Surf School Brochure.pdf"
+                       target="_blank"
+                       class="text-link"
+                       data-en="Download Surf Brochure →"
+                       data-es="Descargar folleto de surf →">
+                        Download Surf Brochure →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="retreat-card">
+
+                <button class="retreat-image gallery-item"
+                        data-gallery="activities"
+                        data-index="1">
+
+                    <img src="images/yoga01.jpg"
+                         alt="Yoga at Calipso Ocean Lodge">
+
+                </button>
+
+                <div class="retreat-content">
+
+                    <h3 data-en="Yoga Retreats"
+                        data-es="Retiros de Yoga">
+                        Yoga Retreats
+                    </h3>
+
+                    <p data-en="Create a restorative yoga escape in an intimate jungle setting, with yoga classes, customized meals, excursions, and plenty of space to relax and reconnect."
+                       data-es="Crea una escapada de yoga en un entorno íntimo de selva, con clases de yoga, comidas personalizadas, excursiones y mucho espacio para relajarte y reconectar.">
+                        Create a restorative yoga escape in an intimate jungle setting, with yoga classes, customized meals, excursions, and plenty of space to relax and reconnect.
+                    </p>
+
+                    <a href="docs/Yoga Camp Brochure.pdf"
+                       target="_blank"
+                       class="text-link"
+                       data-en="Download Yoga Brochure →"
+                       data-es="Descargar folleto de yoga →">
+                        Download Yoga Brochure →
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <div class="retreat-bottom">
+
+            <p data-en="Whether you're looking for an active surf adventure, a restorative yoga escape, or the perfect combination of wellness, adventure, and tropical relaxation, we can help create a retreat tailored to your group."
+               data-es="Ya sea que busques una aventura de surf, una escapada de yoga o la combinación perfecta de bienestar, aventura y relajación tropical, podemos ayudarte a crear un retiro adaptado a tu grupo.">
+                Whether you're looking for an active surf adventure, a restorative yoga escape, or the perfect combination of wellness, adventure, and tropical relaxation, we can help create a retreat tailored to your group.
+            </p>
+
+            <p data-en="Contact us for more details, availability, and customized retreat pricing."
+               data-es="Contáctanos para más detalles, disponibilidad y precios personalizados para tu retiro.">
+                Contact us for more details, availability, and customized retreat pricing.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPLORE -->
+    <section id="explore" class="section section-alt">
+
+        <div class="section-grid">
+
+            <div class="section-text">
 
                 <p class="eyebrow"
                    data-en="GUANACASTE"
@@ -117,119 +423,257 @@
                     Around Avellanas
                 </h2>
 
-            </div>
-
-            <div class="section-grid">
-
-                <div class="section-text">
-
-                    <p data-en="Avellanas Beach is just a short walk away, while the surrounding area offers surf, beaches, nature, restaurants, bars, and plenty of ways to experience Guanacaste."
-                       data-es="Playa Avellanas está a pocos minutos a pie, mientras que los alrededores ofrecen surf, playas, naturaleza, restaurantes, bares y muchas formas de disfrutar Guanacaste.">
-                        Avellanas Beach is just a short walk away, while the surrounding area offers surf, beaches, nature, restaurants, bars, and plenty of ways to experience Guanacaste.
-                    </p>
-
-                    <p data-en="Use Calipso as your peaceful home base while you explore everything the region has to offer."
-                       data-es="Usa Calipso como tu tranquilo punto de partida mientras exploras todo lo que la región tiene para ofrecer.">
-                        Use Calipso as your peaceful home base while you explore everything the region has to offer.
-                    </p>
-
-                </div>
-
-                <div class="photo-grid">
-
-                    <button class="gallery-item"
-                            data-gallery="property"
-                            data-index="8">
-                        <img src="images/hotel_09.jpg" alt="Calipso Ocean Lodge">
-                    </button>
-
-                    <button class="gallery-item"
-                            data-gallery="property"
-                            data-index="9">
-                        <img src="images/hotel_10.jpg" alt="Calipso Ocean Lodge">
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- OUR ROOMS -->
-        <div class="about-subsection">
-
-            <div class="section-heading">
-
-                <p class="eyebrow"
-                   data-en="STAY A WHILE"
-                   data-es="QUÉDATE UN TIEMPO">
-                    STAY A WHILE
+                <p data-en="Avellanas Beach is just a short walk away, while the surrounding area offers surf, beaches, nature, restaurants, bars, and plenty of ways to experience Guanacaste."
+                   data-es="Playa Avellanas está a pocos minutos a pie, mientras que los alrededores ofrecen surf, playas, naturaleza, restaurantes, bares y muchas formas de disfrutar Guanacaste.">
+                    Avellanas Beach is just a short walk away, while the surrounding area offers surf, beaches, nature, restaurants, bars, and plenty of ways to experience Guanacaste.
                 </p>
 
-                <h2 data-en="Our Rooms"
-                    data-es="Nuestras Habitaciones">
-                    Our Rooms
-                </h2>
+                <p data-en="Use Calipso as your peaceful home base while you explore everything the region has to offer."
+                   data-es="Usa Calipso como tu tranquilo punto de partida mientras exploras todo lo que la región tiene para ofrecer.">
+                    Use Calipso as your peaceful home base while you explore everything the region has to offer.
+                </p>
 
             </div>
 
-            <div class="section-grid reverse">
+            <div class="photo-grid">
 
-                <div class="section-text">
+                <button class="gallery-item" data-gallery="property" data-index="8">
+                    <img src="images/hotel_09.jpg" alt="Calipso Ocean Lodge">
+                </button>
 
-                    <p data-en="Our comfortable rooms provide the perfect place to relax and recharge after a day of surfing, yoga, exploring, or enjoying the beautiful beaches of Guanacaste. Each room features a private bathroom with a shower and hot water, as well as its own private patio with a hammock and chairs—ideal for unwinding in the peaceful surroundings."
-                       data-es="Nuestras cómodas habitaciones son el lugar perfecto para descansar y recargar energías después de un día de surf, yoga, exploración o disfrutando de las hermosas playas de Guanacaste. Cada habitación cuenta con baño privado con ducha y agua caliente, además de su propio patio privado con hamaca y sillas.">
-                        Our comfortable rooms provide the perfect place to relax and recharge after a day of surfing, yoga, exploring, or enjoying the beautiful beaches of Guanacaste. Each room features a private bathroom with a shower and hot water, as well as its own private patio with a hammock and chairs—ideal for unwinding in the peaceful surroundings.
-                    </p>
-
-                    <p data-en="Guests can choose from rooms with or without air conditioning, with a variety of configurations including queen beds, single beds, and a family room to accommodate different needs. Fast and reliable Wi-Fi is also available throughout the property, allowing you to stay connected while enjoying your tropical getaway."
-                       data-es="Los huéspedes pueden elegir entre habitaciones con o sin aire acondicionado, con diferentes configuraciones que incluyen camas queen, camas individuales y una habitación familiar. También hay Wi-Fi rápido y confiable en toda la propiedad.">
-                        Guests can choose from rooms with or without air conditioning, with a variety of configurations including queen beds, single beds, and a family room to accommodate different needs. Fast and reliable Wi-Fi is also available throughout the property, allowing you to stay connected while enjoying your tropical getaway.
-                    </p>
-
-                    <a href="#octorate-booking"
-                       class="button booking-trigger"
-                       data-en="Check Availability"
-                       data-es="Ver disponibilidad">
-                        Check Availability
-                    </a>
-
-                </div>
-
-
-                <!-- ROOMS PREVIEW -->
-                <div class="photo-grid room-preview">
-
-                    <button class="gallery-item"
-                            data-gallery="rooms"
-                            data-index="0">
-                        <img src="images/room_a.jpg" alt="Guest room at Calipso Ocean Lodge">
-                    </button>
-
-                    <button class="gallery-item"
-                            data-gallery="rooms"
-                            data-index="1">
-                        <img src="images/room_b.jpg" alt="Guest room at Calipso Ocean Lodge">
-                    </button>
-
-                    <button class="gallery-item"
-                            data-gallery="rooms"
-                            data-index="2">
-                        <img src="images/room_c.jpg" alt="Guest room at Calipso Ocean Lodge">
-                    </button>
-
-                    <button class="gallery-item"
-                            data-gallery="rooms"
-                            data-index="3">
-                        <img src="images/room_d.jpg" alt="Guest room at Calipso Ocean Lodge">
-                    </button>
-
-                </div>
+                <button class="gallery-item" data-gallery="property" data-index="9">
+                    <img src="images/hotel_10.jpg" alt="Calipso Ocean Lodge">
+                </button>
 
             </div>
 
         </div>
 
     </section>
-```
+
+
+    <!-- BOOKING -->
+    <section class="booking-banner">
+
+        <div>
+
+            <p class="eyebrow"
+               data-en="BOOK YOUR STAY"
+               data-es="RESERVA TU ESTADÍA">
+                BOOK YOUR STAY
+            </p>
+
+            <h2 data-en="Stay at Calipso"
+                data-es="Alójate en Calipso">
+                Stay at Calipso
+            </h2>
+
+            <p data-en="Check availability through Booking.com or contact us directly."
+               data-es="Consulta la disponibilidad en Booking.com o contáctanos directamente.">
+                Check availability through Booking.com or contact us directly.
+            </p>
+
+        </div>
+
+        <a href="https://www.booking.com/hotel/cr/tranqui-funkey.html"
+           target="_blank"
+           rel="noopener"
+           class="button button-light"
+           data-en="Book Now"
+           data-es="Reservar">
+            Book Now
+        </a>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section">
+
+        <div class="section-heading">
+
+            <p class="eyebrow"
+               data-en="CONTACT"
+               data-es="CONTACTO">
+                CONTACT
+            </p>
+
+            <h2 data-en="Get in Touch"
+                data-es="Contáctanos">
+                Get in Touch
+            </h2>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+            <div class="contact-info">
+
+                <a href="mailto:hello@calipsooceanlodge.com"
+                   class="contact-link">
+
+                    <span class="contact-icon">✉</span>
+                    <span>hello@calipsooceanlodge.com</span>
+
+                </a>
+
+
+                <a href="https://wa.me/50685964418"
+                   target="_blank"
+                   rel="noopener"
+                   class="contact-link">
+
+                    <span class="contact-icon">◉</span>
+                    <span>WhatsApp</span>
+
+                </a>
+
+
+                <a href="https://www.instagram.com/calipso_ocean_lodge/"
+                   target="_blank"
+                   rel="noopener"
+                   class="contact-link">
+
+                    <span class="contact-icon">◎</span>
+                    <span>@calipso_ocean_lodge</span>
+
+                </a>
+
+
+                <div class="contact-detail">
+
+                    <strong data-en="Location"
+                            data-es="Ubicación">
+                        Location
+                    </strong>
+
+                    <span>Playa Avellanas, Guanacaste, Costa Rica</span>
+
+                </div>
+
+
+                <div class="contact-detail">
+
+                    <strong data-en="Parking"
+                            data-es="Estacionamiento">
+                        Parking
+                    </strong>
+
+                    <span data-en="Gated, secure parking available."
+                          data-es="Estacionamiento cerrado y seguro disponible.">
+                        Gated, secure parking available.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="map-wrap">
+
+                <a href="https://www.google.com/maps/place/Calipso+Ocean+Lodge/@10.2298219,-85.8342721,17z/data=!3m1!4b1!4m9!3m8!1s0x8f9e475524b24025:0x1994037fd55c3758!5m2!4m1!1i2!8m2!3d10.2298219!4d-85.8316972!16s%2Fg%2F11thvm70hl?authuser=0&entry=ttu"
+                   target="_blank"
+                   rel="noopener"
+                   class="map-link">
+
+                    <iframe
+                        src="https://www.google.com/maps?q=Calipso%20Ocean%20Lodge%2C%20Playa%20Avellanas%2C%20Costa%20Rica&output=embed"
+                        loading="lazy"
+                        title="Calipso Ocean Lodge location">
+                    </iframe>
+
+                    <span class="map-overlay">
+
+                        <span data-en="Open in Google Maps →"
+                              data-es="Abrir en Google Maps →">
+                            Open in Google Maps →
+                        </span>
+
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div>
+        <img src="images/logo_black.png"
+             alt="Calipso Ocean Lodge"
+             class="footer-logo footer-logo-dark">
+
+        <img src="images/logo_white.png"
+             alt="Calipso Ocean Lodge"
+             class="footer-logo footer-logo-light">
+    </div>
+
+    <p>
+        © 2026 Calipso Ocean Lodge<br>
+        <a href="https://www.linkedin.com/in/dakotaprice/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="site-credit">
+            Website by Dakota P.
+        </a>
+    </p>
+
+    <a href="#home"
+       data-en="Back to top ↑"
+       data-es="Volver arriba ↑">
+        Back to top ↑
+    </a>
+
+</footer>
+
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox"
+     id="lightbox"
+     aria-hidden="true">
+
+    <button class="lightbox-close"
+            id="lightbox-close"
+            aria-label="Close">
+        ×
+    </button>
+
+    <button class="lightbox-prev"
+            id="lightbox-prev"
+            aria-label="Previous image">
+        ‹
+    </button>
+
+    <div class="lightbox-content">
+
+        <img id="lightbox-image"
+             src=""
+             alt="">
+
+        <div class="lightbox-counter"
+             id="lightbox-counter">
+        </div>
+
+    </div>
+
+    <button class="lightbox-next"
+            id="lightbox-next"
+            aria-label="Next image">
+        ›
+    </button>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
