@@ -1,3 +1,4 @@
+```css
 :root {
     --bg: #f5f2eb;
     --bg-alt: #eae6dc;
@@ -279,6 +280,13 @@ body.dark .footer-logo-light {
 }
 
 
+/* ABOUT SUBSECTIONS */
+
+.about-subsection + .about-subsection {
+    margin-top: clamp(55px, 7vw, 90px);
+}
+
+
 /* PHOTO GRIDS */
 
 .photo-grid {
@@ -316,6 +324,27 @@ body.dark .footer-logo-light {
 
 .gallery-item:hover img {
     transform: scale(1.035);
+}
+
+
+/* 1 PHOTO */
+
+.photo-grid .gallery-item:only-child {
+    grid-column: span 1;
+}
+
+
+/* 2 PHOTOS */
+
+.photo-grid:has(.gallery-item:nth-child(2):last-child) .gallery-item:first-child {
+    grid-column: span 1;
+}
+
+
+/* 4 PHOTOS */
+
+.photo-grid:has(.gallery-item:nth-child(4):last-child) .gallery-item:first-child {
+    grid-column: span 1;
 }
 
 
@@ -775,3 +804,4 @@ body.dark .footer-logo-light {
         font-size: 3rem;
     }
 }
+```
