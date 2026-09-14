@@ -54,8 +54,7 @@ themeToggle.addEventListener("click", () => {
 
 const languageToggle = document.getElementById("language-toggle");
 
-let currentLanguage =
-    localStorage.getItem("calipso-language") || "en";
+let currentLanguage = localStorage.getItem("calipso-language") || "en";
 
 function updateLanguage() {
     document.documentElement.lang = currentLanguage;
@@ -64,21 +63,14 @@ function updateLanguage() {
         element.textContent = element.dataset[currentLanguage];
     });
 
-    languageToggle.textContent =
-        currentLanguage === "en" ? "ES" : "EN";
+    languageToggle.textContent = currentLanguage === "en" ? "ES" : "EN";
 }
 
 updateLanguage();
 
 languageToggle.addEventListener("click", () => {
-    currentLanguage =
-        currentLanguage === "en" ? "es" : "en";
-
-    localStorage.setItem(
-        "calipso-language",
-        currentLanguage
-    );
-
+    currentLanguage = currentLanguage === "en" ? "es" : "en";
+    localStorage.setItem("calipso-language", currentLanguage);
     updateLanguage();
 });
 
@@ -88,7 +80,6 @@ languageToggle.addEventListener("click", () => {
 ========================= */
 
 const galleries = {
-
     property: [
         "images/hotel_01.jpg",
         "images/hotel_02.jpg",
@@ -124,16 +115,11 @@ const galleries = {
 
 
 const lightbox = document.getElementById("lightbox");
-const lightboxImage =
-    document.getElementById("lightbox-image");
-const lightboxCounter =
-    document.getElementById("lightbox-counter");
-const lightboxClose =
-    document.getElementById("lightbox-close");
-const lightboxPrev =
-    document.getElementById("lightbox-prev");
-const lightboxNext =
-    document.getElementById("lightbox-next");
+const lightboxImage = document.getElementById("lightbox-image");
+const lightboxCounter = document.getElementById("lightbox-counter");
+const lightboxClose = document.getElementById("lightbox-close");
+const lightboxPrev = document.getElementById("lightbox-prev");
+const lightboxNext = document.getElementById("lightbox-next");
 
 let currentGallery = [];
 let currentIndex = 0;
@@ -142,8 +128,7 @@ let currentIndex = 0;
 function showImage(index) {
     currentIndex = index;
 
-    lightboxImage.src =
-        currentGallery[currentIndex];
+    lightboxImage.src = currentGallery[currentIndex];
 
     lightboxCounter.textContent =
         `${currentIndex + 1} / ${currentGallery.length}`;
@@ -152,7 +137,6 @@ function showImage(index) {
 
 function openLightbox(galleryName, index) {
     currentGallery = galleries[galleryName];
-
     showImage(index);
 
     lightbox.classList.add("active");
@@ -170,82 +154,40 @@ function closeLightbox() {
 }
 
 
-/* =========================
-   GALLERY IMAGES
-========================= */
-
 document.querySelectorAll(".gallery-item").forEach(item => {
-
     item.addEventListener("click", () => {
-
         const galleryName = item.dataset.gallery;
         const index = Number(item.dataset.index);
 
         openLightbox(galleryName, index);
-
     });
-
 });
 
 
-/* =========================
-   FULL GALLERY LINKS
-========================= */
-
-document.querySelectorAll(".full-gallery-link").forEach(link => {
-
-    link.addEventListener("click", event => {
-
-        event.preventDefault();
-
-        const galleryName = link.dataset.gallery;
-        const index = Number(link.dataset.index || 0);
-
-        openLightbox(galleryName, index);
-
-    });
-
-});
-
-
-/* =========================
-   LIGHTBOX CONTROLS
-========================= */
-
-lightboxClose.addEventListener(
-    "click",
-    closeLightbox
-);
-
+lightboxClose.addEventListener("click", closeLightbox);
 
 lightboxPrev.addEventListener("click", () => {
-
     const newIndex =
         (currentIndex - 1 + currentGallery.length) %
         currentGallery.length;
 
     showImage(newIndex);
-
 });
 
 
 lightboxNext.addEventListener("click", () => {
-
     const newIndex =
         (currentIndex + 1) %
         currentGallery.length;
 
     showImage(newIndex);
-
 });
 
 
 lightbox.addEventListener("click", event => {
-
     if (event.target === lightbox) {
         closeLightbox();
     }
-
 });
 
 
@@ -270,7 +212,6 @@ document.addEventListener("keydown", event => {
     if (event.key === "ArrowRight") {
         lightboxNext.click();
     }
-
 });
 
 
@@ -281,20 +222,14 @@ document.addEventListener("keydown", event => {
 let touchStartX = 0;
 
 lightbox.addEventListener("touchstart", event => {
-
-    touchStartX =
-        event.changedTouches[0].screenX;
-
+    touchStartX = event.changedTouches[0].screenX;
 });
 
 
 lightbox.addEventListener("touchend", event => {
 
-    const touchEndX =
-        event.changedTouches[0].screenX;
-
-    const difference =
-        touchStartX - touchEndX;
+    const touchEndX = event.changedTouches[0].screenX;
+    const difference = touchStartX - touchEndX;
 
     if (Math.abs(difference) < 50) {
         return;
@@ -305,32 +240,4 @@ lightbox.addEventListener("touchend", event => {
     } else {
         lightboxPrev.click();
     }
-
-});
-
-
-/* =========================
-   OCTORATE BOOKING
-========================= */
-
-document.querySelectorAll(".booking-trigger").forEach(link => {
-
-    link.addEventListener("click", event => {
-
-        const bookingSection =
-            document.getElementById("octorate-booking");
-
-        if (!bookingSection) {
-            return;
-        }
-
-        event.preventDefault();
-
-        bookingSection.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-
-    });
-
 });
