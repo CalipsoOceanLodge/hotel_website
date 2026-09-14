@@ -777,17 +777,3 @@ body.dark .footer-logo-light {
         font-size: 3rem;
     }
 }
-
-/* ABOUT SUBSECTION SPACING */
-
-.about-subsection {
-    padding-bottom: 5rem;
-    margin-bottom: 5rem;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.about-subsection:last-child {
-    padding-bottom: 0;
-    margin-bottom: 0;
-    border-bottom: none;
-}
