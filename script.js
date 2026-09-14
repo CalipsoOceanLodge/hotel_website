@@ -1,94 +1,94 @@
-```javascript
-// MOBILE MENU
+/* =========================
+   MOBILE MENU
+========================= */
 
-const menuToggle = document.querySelector(".menu-toggle");
-const mainNav = document.querySelector(".main-nav");
+const menuToggle = document.getElementById("menu-toggle");
+const mainNav = document.getElementById("main-nav");
 
-if (menuToggle && mainNav) {
-    menuToggle.addEventListener("click", () => {
-        mainNav.classList.toggle("open");
-    });
-}
+menuToggle.addEventListener("click", () => {
+    mainNav.classList.toggle("open");
+});
 
 document.querySelectorAll(".main-nav a").forEach(link => {
     link.addEventListener("click", () => {
-        mainNav?.classList.remove("open");
+        mainNav.classList.remove("open");
     });
 });
 
 
-// DARK MODE
+/* =========================
+   DARK MODE
+========================= */
 
-const themeToggle = document.querySelector("#theme-toggle");
+const themeToggle = document.getElementById("theme-toggle");
 
-if (themeToggle) {
-    const savedTheme = localStorage.getItem("calipso-theme");
+const savedTheme = localStorage.getItem("calipso-theme");
 
-    if (savedTheme === "dark") {
-        document.body.classList.add("dark");
-    }
-
-    themeToggle.addEventListener("click", () => {
-        document.body.classList.toggle("dark");
-
-        localStorage.setItem(
-            "calipso-theme",
-            document.body.classList.contains("dark") ? "dark" : "light"
-        );
-    });
+if (savedTheme === "dark") {
+    document.body.classList.add("dark");
 }
 
-
-// LANGUAGE TOGGLE
-
-const languageToggle = document.querySelector("#language-toggle");
-
-if (languageToggle) {
-    const savedLanguage = localStorage.getItem("calipso-language") || "en";
-
-    function setLanguage(language) {
-        document.querySelectorAll("[data-en]").forEach(element => {
-            if (language === "en") {
-                element.textContent = element.dataset.en;
-            } else if (element.dataset.es) {
-                element.textContent = element.dataset.es;
-            }
-        });
-
-        languageToggle.textContent = language === "en" ? "ES" : "EN";
-        localStorage.setItem("calipso-language", language);
-    }
-
-    languageToggle.addEventListener("click", () => {
-        const currentLanguage =
-            localStorage.getItem("calipso-language") || "en";
-
-        setLanguage(currentLanguage === "en" ? "es" : "en");
-    });
-
-    setLanguage(savedLanguage);
+function updateThemeIcon() {
+    themeToggle.textContent = document.body.classList.contains("dark")
+        ? "☀"
+        : "☾";
 }
 
+updateThemeIcon();
 
-// OCTORATE BOOKING BUTTONS
+themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
 
-document.querySelectorAll(".booking-trigger").forEach(button => {
-    button.addEventListener("click", () => {
-        const bookingSection = document.querySelector("#octorate-booking");
+    const theme = document.body.classList.contains("dark")
+        ? "dark"
+        : "light";
 
-        if (bookingSection) {
-            bookingSection.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-        }
-    });
+    localStorage.setItem("calipso-theme", theme);
+    updateThemeIcon();
 });
 
 
-// GALLERIES
+/* =========================
+   LANGUAGE
+========================= */
+
+const languageToggle = document.getElementById("language-toggle");
+
+let currentLanguage =
+    localStorage.getItem("calipso-language") || "en";
+
+function updateLanguage() {
+    document.documentElement.lang = currentLanguage;
+
+    document.querySelectorAll("[data-en]").forEach(element => {
+        element.textContent = element.dataset[currentLanguage];
+    });
+
+    languageToggle.textContent =
+        currentLanguage === "en" ? "ES" : "EN";
+}
+
+updateLanguage();
+
+languageToggle.addEventListener("click", () => {
+    currentLanguage =
+        currentLanguage === "en" ? "es" : "en";
+
+    localStorage.setItem(
+        "calipso-language",
+        currentLanguage
+    );
+
+    updateLanguage();
+});
+
+
+/* =========================
+   GALLERIES
+========================= */
 
 const galleries = {
+
     property: [
         "images/hotel_01.jpg",
         "images/hotel_02.jpg",
@@ -123,125 +123,139 @@ const galleries = {
 };
 
 
-// LIGHTBOX
+const lightbox = document.getElementById("lightbox");
+const lightboxImage =
+    document.getElementById("lightbox-image");
+const lightboxCounter =
+    document.getElementById("lightbox-counter");
+const lightboxClose =
+    document.getElementById("lightbox-close");
+const lightboxPrev =
+    document.getElementById("lightbox-prev");
+const lightboxNext =
+    document.getElementById("lightbox-next");
 
-const lightbox = document.querySelector(".lightbox");
-const lightboxImage = document.querySelector(".lightbox-content img");
-const lightboxCounter = document.querySelector(".lightbox-counter");
-const lightboxClose = document.querySelector(".lightbox-close");
-const lightboxPrev = document.querySelector(".lightbox-prev");
-const lightboxNext = document.querySelector(".lightbox-next");
-
-let currentGallery = null;
+let currentGallery = [];
 let currentIndex = 0;
 
-function openLightbox(galleryName, index) {
-    if (!lightbox || !lightboxImage || !galleries[galleryName]) {
-        return;
-    }
 
-    currentGallery = galleryName;
+function showImage(index) {
     currentIndex = index;
 
-    updateLightbox();
+    lightboxImage.src =
+        currentGallery[currentIndex];
+
+    lightboxCounter.textContent =
+        `${currentIndex + 1} / ${currentGallery.length}`;
+}
+
+
+function openLightbox(galleryName, index) {
+    currentGallery = galleries[galleryName];
+
+    showImage(index);
 
     lightbox.classList.add("active");
+    lightbox.setAttribute("aria-hidden", "false");
+
     document.body.style.overflow = "hidden";
 }
 
-function updateLightbox() {
-    const images = galleries[currentGallery];
-
-    if (!images) {
-        return;
-    }
-
-    lightboxImage.src = images[currentIndex];
-
-    if (lightboxCounter) {
-        lightboxCounter.textContent =
-            `${currentIndex + 1} / ${images.length}`;
-    }
-}
 
 function closeLightbox() {
-    if (!lightbox) {
-        return;
-    }
-
     lightbox.classList.remove("active");
+    lightbox.setAttribute("aria-hidden", "true");
+
     document.body.style.overflow = "";
 }
 
-function showPrevious() {
-    if (!currentGallery) {
-        return;
-    }
 
-    const images = galleries[currentGallery];
+/* =========================
+   GALLERY IMAGES
+========================= */
 
-    currentIndex =
-        (currentIndex - 1 + images.length) % images.length;
+document.querySelectorAll(".gallery-item").forEach(item => {
 
-    updateLightbox();
-}
-
-function showNext() {
-    if (!currentGallery) {
-        return;
-    }
-
-    const images = galleries[currentGallery];
-
-    currentIndex =
-        (currentIndex + 1) % images.length;
-
-    updateLightbox();
-}
-
-
-// GALLERY THUMBNAILS
-
-document.querySelectorAll("[data-gallery]").forEach(item => {
     item.addEventListener("click", () => {
+
         const galleryName = item.dataset.gallery;
-        const index = Number(item.dataset.index) || 0;
+        const index = Number(item.dataset.index);
 
         openLightbox(galleryName, index);
+
     });
+
 });
 
 
-// VIEW FULL GALLERY LINKS
+/* =========================
+   FULL GALLERY LINKS
+========================= */
 
-document.querySelectorAll(".gallery-view-link").forEach(link => {
-    link.addEventListener("click", () => {
+document.querySelectorAll(".full-gallery-link").forEach(link => {
+
+    link.addEventListener("click", event => {
+
+        event.preventDefault();
+
         const galleryName = link.dataset.gallery;
+        const index = Number(link.dataset.index || 0);
 
-        if (galleryName && galleries[galleryName]) {
-            openLightbox(galleryName, 0);
-        }
+        openLightbox(galleryName, index);
+
     });
+
 });
 
 
-// LIGHTBOX CONTROLS
+/* =========================
+   LIGHTBOX CONTROLS
+========================= */
 
-lightboxClose?.addEventListener("click", closeLightbox);
-lightboxPrev?.addEventListener("click", showPrevious);
-lightboxNext?.addEventListener("click", showNext);
+lightboxClose.addEventListener(
+    "click",
+    closeLightbox
+);
 
-lightbox?.addEventListener("click", event => {
+
+lightboxPrev.addEventListener("click", () => {
+
+    const newIndex =
+        (currentIndex - 1 + currentGallery.length) %
+        currentGallery.length;
+
+    showImage(newIndex);
+
+});
+
+
+lightboxNext.addEventListener("click", () => {
+
+    const newIndex =
+        (currentIndex + 1) %
+        currentGallery.length;
+
+    showImage(newIndex);
+
+});
+
+
+lightbox.addEventListener("click", event => {
+
     if (event.target === lightbox) {
         closeLightbox();
     }
+
 });
 
 
-// KEYBOARD CONTROLS
+/* =========================
+   KEYBOARD CONTROLS
+========================= */
 
 document.addEventListener("keydown", event => {
-    if (!lightbox?.classList.contains("active")) {
+
+    if (!lightbox.classList.contains("active")) {
         return;
     }
 
@@ -250,37 +264,73 @@ document.addEventListener("keydown", event => {
     }
 
     if (event.key === "ArrowLeft") {
-        showPrevious();
+        lightboxPrev.click();
     }
 
     if (event.key === "ArrowRight") {
-        showNext();
+        lightboxNext.click();
     }
+
 });
 
 
-// TOUCH SWIPE
+/* =========================
+   TOUCH SWIPE
+========================= */
 
 let touchStartX = 0;
-let touchEndX = 0;
 
-lightbox?.addEventListener("touchstart", event => {
-    touchStartX = event.changedTouches[0].screenX;
+lightbox.addEventListener("touchstart", event => {
+
+    touchStartX =
+        event.changedTouches[0].screenX;
+
 });
 
-lightbox?.addEventListener("touchend", event => {
-    touchEndX = event.changedTouches[0].screenX;
 
-    const distance = touchEndX - touchStartX;
+lightbox.addEventListener("touchend", event => {
 
-    if (Math.abs(distance) < 50) {
+    const touchEndX =
+        event.changedTouches[0].screenX;
+
+    const difference =
+        touchStartX - touchEndX;
+
+    if (Math.abs(difference) < 50) {
         return;
     }
 
-    if (distance > 0) {
-        showPrevious();
+    if (difference > 0) {
+        lightboxNext.click();
     } else {
-        showNext();
+        lightboxPrev.click();
     }
+
 });
-```
+
+
+/* =========================
+   OCTORATE BOOKING
+========================= */
+
+document.querySelectorAll(".booking-trigger").forEach(link => {
+
+    link.addEventListener("click", event => {
+
+        const bookingSection =
+            document.getElementById("octorate-booking");
+
+        if (!bookingSection) {
+            return;
+        }
+
+        event.preventDefault();
+
+        bookingSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    });
+
+});
