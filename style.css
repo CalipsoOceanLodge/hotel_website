@@ -747,9 +747,11 @@ body.dark .footer-logo-light {
         width: 95px;
     }
 
+
     .hero-logo {
-        width: 75vw;
-    }
+    max-height: 20vh;
+    width: auto;
+}
 
     .section {
         padding: 70px 5vw;
