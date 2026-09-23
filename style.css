@@ -747,6 +747,10 @@ body.dark .footer-logo-light {
         width: 75vw;
     }
 
+    .hero-overlay {
+    padding-top: 70px;
+    }
+    
     .section {
         padding: 70px 5vw;
     }
