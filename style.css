@@ -197,11 +197,7 @@ body.dark .footer-logo-light {
 }
 
 .hero-logo {
-    display: block;
-    width: auto;
-    height: auto;
-    max-height: none;
-    object-fit: contain;
+    width: min(390px, 70vw);
     margin: 35px auto 25px;
 }
 
@@ -747,11 +743,9 @@ body.dark .footer-logo-light {
         width: 95px;
     }
 
-
     .hero-logo {
-    max-height: 20vh;
-    width: auto;
-}
+        width: 75vw;
+    }
 
     .section {
         padding: 70px 5vw;
