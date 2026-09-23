@@ -197,8 +197,11 @@ body.dark .footer-logo-light {
 }
 
 .hero-logo {
+    display: block;
     width: min(390px, 82%);
     height: auto;
+    max-height: none;
+    object-fit: contain;
     margin: 35px auto 25px;
 }
 
