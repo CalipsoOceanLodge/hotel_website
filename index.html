@@ -11,38 +11,83 @@
 <body>
 
 <header class="site-header">
+
     <a href="#home" class="brand">
         <img src="images/logo_black.png" alt="Calipso Ocean Lodge" class="logo logo-dark">
         <img src="images/logo_white.png" alt="Calipso Ocean Lodge" class="logo logo-light">
     </a>
 
     <nav class="main-nav" id="main-nav">
-        <a href="#about" data-en="About" data-es="Nosotros">About</a>
-        <a href="#retreats" data-en="Retreats" data-es="Retiros">Retreats</a>
-        <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
-        <a href="#octorate-booking"
+
+        <a href="#home"
+           class="mobile-home"
+           data-en="Home"
+           data-es="Inicio">
+            Home
+        </a>
+
+        <a href="#about"
+           data-en="About"
+           data-es="Nosotros">
+            About
+        </a>
+
+        <a href="#retreats"
+           data-en="Retreats"
+           data-es="Retiros">
+            Retreats
+        </a>
+
+        <a href="#contact"
+           data-en="Contact"
+           data-es="Contacto">
+            Contact
+        </a>
+
+        <a href="#booking"
            class="nav-book booking-trigger"
            data-en="Book Now"
            data-es="Reservar">
             Book Now
         </a>
+
     </nav>
 
     <div class="header-tools">
-        <button id="language-toggle" aria-label="Change language">ES</button>
-        <button id="theme-toggle" aria-label="Toggle light and dark mode">⏾</button>
-        <button id="menu-toggle" class="menu-toggle" aria-label="Open menu">☰</button>
+
+        <button id="language-toggle"
+                aria-label="Change language">
+            ES
+        </button>
+
+        <button id="theme-toggle"
+                aria-label="Toggle light and dark mode">
+            ☾
+        </button>
+
+        <button id="menu-toggle"
+                class="menu-toggle"
+                aria-label="Open menu">
+            ☰
+        </button>
+
     </div>
+
 </header>
 
 
 <main>
 
     <!-- HERO -->
+
     <section id="home" class="hero">
-        <img src="images/hotel_04.jpg" alt="Calipso Ocean Lodge" class="hero-image">
+
+        <img src="images/hotel_04.jpg"
+             alt="Calipso Ocean Lodge"
+             class="hero-image">
 
         <div class="hero-overlay">
+
             <div class="hero-content">
 
                 <p class="eyebrow"
@@ -61,7 +106,7 @@
                     Your own piece of paradise, close to everything.
                 </p>
 
-                <a href="#octorate-booking"
+                <a href="#booking"
                    class="button button-light booking-trigger"
                    data-en="Book Your Stay"
                    data-es="Reserva tu estadía">
@@ -69,14 +114,53 @@
                 </a>
 
             </div>
+
         </div>
+
     </section>
 
 
+    <!-- QUICK LINKS -->
+
+    <div class="quick-links">
+
+        <a href="https://wa.me/50685964418"
+           target="_blank"
+           rel="noopener"
+           class="quick-link">
+            <span class="quick-link-icon">◉</span>
+            <span>WhatsApp</span>
+        </a>
+
+        <a href="https://www.instagram.com/calipso_ocean_lodge/"
+           target="_blank"
+           rel="noopener"
+           class="quick-link">
+            <span class="quick-link-icon">◎</span>
+            <span>Instagram</span>
+        </a>
+
+        <a href="#booking"
+           class="quick-link booking-trigger">
+            <span class="quick-link-icon">↗</span>
+            <span>BOOK NOW</span>
+        </a>
+
+        <a href="mailto:hello@calipsooceanlodge.com"
+           class="quick-link">
+            <span class="quick-link-icon">✉</span>
+            <span>Email</span>
+        </a>
+
+    </div>
+
+
     <!-- ABOUT -->
+
     <section id="about" class="section">
 
         <!-- ABOUT CALIPSO -->
+
         <div class="about-subsection">
 
             <div class="section-heading">
@@ -98,25 +182,20 @@
 
                 <div class="section-text">
 
-                    <p data-en="Nestled in the lush surroundings of Playa Avellana in Guanacaste, Costa Rica, this charming 6-room eco-riendly jungle lodge oers a peaceul and intimate tropical escape. Located just a 7-minute walk (approximately 550–700 meters) rom beautiul Playa Avellanas, an uncrowded gem with sur breaks or all levels."
-                       data-es="Ubicado entre la exuberante naturaleza de Playa Avellanas, Guanacaste, Costa Rica, este encantador lodge ecológico de 6 habitaciones orece una escapada tropical tranquila e íntima. Se encuentra a solo 7 minutos a pie (aproximadamente 550–700 metros) de la hermosa Playa Avellanas, una joya poco concurrida con olas para todos los niveles.">
-                        Nestled in the lush surroundings o Playa Avellana in Guanacaste, Costa Rica, this charming 6-room eco-riendly jungle lodge oers a peaceul and intimate tropical escape. Located just a 7-minute walk (approximately 550–700 meters) rom beautiul Playa Avellanas, an uncrowded gem with sur breaks or all levels.
+                    <p data-en="Nestled in the lush surroundings of Playa Avellana in Guanacaste, Costa Rica, this charming 6-room eco-friendly jungle lodge offers a peaceful and intimate tropical escape. Located just a 7-minute walk (approximately 550–700 meters) from beautiful Avellanas Beach, an uncrowded gem with surf breaks for all levels."
+                       data-es="Ubicado entre la exuberante naturaleza de Playa Avellanas, Guanacaste, Costa Rica, este encantador lodge ecológico de 6 habitaciones ofrece una escapada tropical tranquila e íntima. Se encuentra a solo 7 minutos a pie (aproximadamente 550–700 metros) de la hermosa Playa Avellanas, una joya poco concurrida con olas para todos los niveles.">
+                        Nestled in the lush surroundings of Playa Avellana in Guanacaste, Costa Rica, this charming 6-room eco-friendly jungle lodge offers a peaceful and intimate tropical escape. Located just a 7-minute walk (approximately 550–700 meters) from beautiful Avellanas Beach, an uncrowded gem with surf breaks for all levels.
                     </p>
 
                 </div>
 
-                        <div class="photo-grid">
+                <div class="photo-grid">
 
                     <button class="gallery-item"
                             data-gallery="property"
-                            data-index="8">
-                        <img src="images/hotel_01.jpg" alt="Calipso Ocean Lodge">
-                    </button>
-
-                    <button class="gallery-item"
-                            data-gallery="property"
-                            data-index="9">
-                        <img src="images/reception.jpg" alt="Calipso Ocean Lodge">
+                            data-index="0">
+                        <img src="images/hotel_01.jpg"
+                             alt="Calipso Ocean Lodge">
                     </button>
 
                 </div>
@@ -126,8 +205,8 @@
         </div>
 
 
-
         <!-- THE LODGE -->
+
         <div class="about-subsection">
 
             <div class="section-heading">
@@ -149,7 +228,7 @@
 
                 <div class="section-text">
 
-                    <p data-en="The lodge eatures an outdoor swimming pool, pool bar, tranquil garden area, and a dedicated yoga deck—perfect for morning practice, relaxation, and enjoying the surrounding nature."
+                    <p data-en="The lodge features an outdoor swimming pool, pool bar, tranquil garden area, and a dedicated yoga deck—perfect for morning practice, relaxation, and enjoying the surrounding nature."
                        data-es="El lodge cuenta con una piscina al aire libre, bar junto a la piscina, un tranquilo jardín y una terraza dedicada al yoga, perfecta para practicar por la mañana, relajarse y disfrutar de la naturaleza.">
                         The lodge features an outdoor swimming pool, pool bar, tranquil garden area, and a dedicated yoga deck—perfect for morning practice, relaxation, and enjoying the surrounding nature.
                     </p>
@@ -161,26 +240,27 @@
 
                 </div>
 
-
-                <!-- PROPERTY PREVIEW -->
                 <div class="photo-grid property-preview">
 
                     <button class="gallery-item"
                             data-gallery="property"
                             data-index="1">
-                        <img src="images/hotel_02.jpg" alt="Calipso Ocean Lodge">
+                        <img src="images/hotel_02.jpg"
+                             alt="Calipso Ocean Lodge">
                     </button>
 
                     <button class="gallery-item"
                             data-gallery="property"
                             data-index="2">
-                        <img src="images/hotel_03.jpg" alt="Calipso Ocean Lodge">
+                        <img src="images/hotel_03.jpg"
+                             alt="Calipso Ocean Lodge">
                     </button>
 
                     <button class="gallery-item"
                             data-gallery="property"
                             data-index="3">
-                        <img src="images/hotel_14.jpg" alt="Calipso Ocean Lodge">
+                        <img src="images/hotel_04.jpg"
+                             alt="Calipso Ocean Lodge">
                     </button>
 
                 </div>
@@ -191,6 +271,7 @@
 
 
         <!-- AROUND AVELLANAS -->
+
         <div class="about-subsection">
 
             <div class="section-heading">
@@ -212,9 +293,9 @@
 
                 <div class="section-text">
 
-                    <p data-en="Playa Avellanas is just a short walk away, while the surrounding area offers surf, beaches, nature, restaurants, bars, and plenty of ways to experience Guanacaste."
+                    <p data-en="Avellanas Beach is just a short walk away, while the surrounding area offers surf, beaches, nature, restaurants, bars, and plenty of ways to experience Guanacaste."
                        data-es="Playa Avellanas está a pocos minutos a pie, mientras que los alrededores ofrecen surf, playas, naturaleza, restaurantes, bares y muchas formas de disfrutar Guanacaste.">
-                        Playa Avellanas is just a short walk away, while the surrounding area offers surf, beaches, nature, restaurants, bars, and plenty of ways to experience Guanacaste.
+                        Avellanas Beach is just a short walk away, while the surrounding area offers surf, beaches, nature, restaurants, bars, and plenty of ways to experience Guanacaste.
                     </p>
 
                     <p data-en="Use Calipso as your peaceful home base while you explore everything the region has to offer."
@@ -229,13 +310,15 @@
                     <button class="gallery-item"
                             data-gallery="property"
                             data-index="8">
-                        <img src="images/hotel_09.jpg" alt="Calipso Ocean Lodge">
+                        <img src="images/hotel_09.jpg"
+                             alt="Calipso Ocean Lodge">
                     </button>
 
                     <button class="gallery-item"
                             data-gallery="property"
                             data-index="9">
-                        <img src="images/hotel_10.jpg" alt="Calipso Ocean Lodge">
+                        <img src="images/hotel_10.jpg"
+                             alt="Calipso Ocean Lodge">
                     </button>
 
                 </div>
@@ -246,6 +329,7 @@
 
 
         <!-- OUR ROOMS -->
+
         <div class="about-subsection">
 
             <div class="section-heading">
@@ -277,7 +361,7 @@
                         Guests can choose from rooms with or without air conditioning, with a variety of configurations including queen beds, single beds, and a family room to accommodate different needs. Fast and reliable Wi-Fi is also available throughout the property, allowing you to stay connected while enjoying your tropical getaway.
                     </p>
 
-                    <a href="#octorate-booking"
+                    <a href="#booking"
                        class="button booking-trigger"
                        data-en="Check Availability"
                        data-es="Ver disponibilidad">
@@ -286,32 +370,34 @@
 
                 </div>
 
-
-                <!-- ROOMS PREVIEW -->
                 <div class="photo-grid room-preview">
 
                     <button class="gallery-item"
                             data-gallery="rooms"
                             data-index="0">
-                        <img src="images/room_a.jpg" alt="Guest room at Calipso Ocean Lodge">
+                        <img src="images/room_a.jpg"
+                             alt="Guest room at Calipso Ocean Lodge">
                     </button>
 
                     <button class="gallery-item"
                             data-gallery="rooms"
                             data-index="1">
-                        <img src="images/room_b.jpg" alt="Guest room at Calipso Ocean Lodge">
+                        <img src="images/room_b.jpg"
+                             alt="Guest room at Calipso Ocean Lodge">
                     </button>
 
                     <button class="gallery-item"
                             data-gallery="rooms"
                             data-index="2">
-                        <img src="images/room_c.jpg" alt="Guest room at Calipso Ocean Lodge">
+                        <img src="images/room_c.jpg"
+                             alt="Guest room at Calipso Ocean Lodge">
                     </button>
 
                     <button class="gallery-item"
                             data-gallery="rooms"
                             data-index="3">
-                        <img src="images/room_d.jpg" alt="Guest room at Calipso Ocean Lodge">
+                        <img src="images/room_d.jpg"
+                             alt="Guest room at Calipso Ocean Lodge">
                     </button>
 
                 </div>
@@ -324,6 +410,7 @@
 
 
     <!-- RETREATS -->
+
     <section id="retreats" class="section">
 
         <div class="section-heading">
@@ -376,9 +463,9 @@
                     <a href="docs/Surf%20School%20brochure.pdf"
                        target="_blank"
                        class="text-link"
-                       data-en="READ THE SURF CAMP BROCHURE →"
-                       data-es="LEER EL FOLLETO DEL CAMPAMENTO DE SURF →">
-                        READ THE SURF CAMP BROCHURE →
+                       data-en="READ THE SURF SCHOOL BROCHURE →"
+                       data-es="LEER EL FOLLETO DE SURF →">
+                        READ THE SURF SCHOOL BROCHURE →
                     </a>
 
                 </div>
@@ -447,10 +534,11 @@
 
 
     <!-- BOOKING -->
-    <section class="booking-banner"
-             id="octorate-booking">
 
-        <div>
+    <section class="booking-banner"
+             id="booking">
+
+        <div class="booking-content">
 
             <p class="eyebrow"
                data-en="BOOK YOUR STAY"
@@ -470,16 +558,20 @@
 
         </div>
 
-        <br>
-  <div>
-        <!-- Octorate Widget Integrated -->
-        <script type="text/javascript" src="https://resx.octorate.com/octobook/resources/widget/js/form.js" data-sitekey="octosite837260"></script>
-  </div>
+        <!-- Octorate Widget -->
+
+        <script type="text/javascript"
+                src="https://resx.octorate.com/octobook/resources/widget/js/form.js"
+                data-sitekey="octosite837260">
+        </script>
+
     </section>
 
 
     <!-- CONTACT -->
-    <section id="contact" class="section contact-section">
+
+    <section id="contact"
+             class="section contact-section">
 
         <div class="section-heading">
 
@@ -532,10 +624,11 @@
                 </a>
 
 
-                <a href="#octorate-booking"
+                <a href="#booking"
                    class="contact-link booking-trigger">
 
                     <span class="contact-icon">↗</span>
+
                     <span data-en="Book Now"
                           data-es="Reservar">
                         Book Now
