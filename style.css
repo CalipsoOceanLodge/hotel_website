@@ -15,6 +15,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 90px;
 }
 
 body {
@@ -23,7 +24,7 @@ body {
     background: var(--bg);
     color: var(--text);
     line-height: 1.65;
-    font-size: 1.15rem;
+    font-size: 1.05rem;
 }
 
 body.dark {
@@ -123,6 +124,10 @@ body.dark .footer-logo-light {
     color: var(--bg);
 }
 
+.mobile-home {
+    display: none;
+}
+
 .header-tools {
     display: flex;
     align-items: center;
@@ -138,7 +143,7 @@ body.dark .footer-logo-light {
 }
 
 #language-toggle {
-    font-size: 1.15rem;
+    font-size: 0.75rem;
     letter-spacing: 0.08em;
 }
 
@@ -178,9 +183,10 @@ body.dark .footer-logo-light {
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 90px 20px 30px;
     background: linear-gradient(
-        rgba(0, 0, 0, 0.15),
-        rgba(0, 0, 0, 0.38)
+        rgba(0, 0, 0, 0.28),
+        rgba(0, 0, 0, 0.48)
     );
 }
 
@@ -189,21 +195,39 @@ body.dark .footer-logo-light {
     color: white;
 }
 
+.hero-content .eyebrow {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+}
+
 .eyebrow {
     margin: 0 0 18px;
-    font-size: 1.15rem;
+    font-size: 0.72rem;
     letter-spacing: 0.18em;
     font-weight: bold;
 }
 
 .hero-logo {
     width: min(390px, 70vw);
-    margin: 35px auto 25px;
+    margin: 25px auto 20px;
+    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.45));
 }
 
 .hero-text {
-    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
     margin: 0 auto 30px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+}
+
+.hero .button-light {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid white;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero .button-light:hover {
+    background: white;
+    color: #111;
+    text-shadow: none;
 }
 
 
@@ -245,13 +269,13 @@ body.dark .footer-logo-light {
     font-family: Georgia, "Times New Roman", serif;
     font-weight: normal;
     font-size: clamp(2.3rem, 5vw, 5rem);
-    line-height: 1.15;
+    line-height: 1.05;
 }
 
 .section-text p {
     color: var(--muted);
     margin: 0 0 20px;
-    font-size: 1.15rem;
+    font-size: 1.05rem;
 }
 
 .button {
@@ -259,7 +283,7 @@ body.dark .footer-logo-light {
     margin-top: 15px;
     padding: 13px 22px;
     border: 1px solid var(--text);
-    font-size: 1.15rem;
+    font-size: 0.78rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     transition: 0.2s ease;
@@ -324,7 +348,7 @@ body.dark .footer-logo-light {
 }
 
 .gallery-item:hover img {
-    transform: (1.035);
+    transform: scale(1.035);
 }
 
 
@@ -369,7 +393,7 @@ body.dark .footer-logo-light {
     max-width: 700px;
     margin: 0 auto;
     color: var(--muted);
-    font-size: 1.15rem;
+    font-size: 1.05rem;
 }
 
 .full-gallery {
@@ -428,7 +452,7 @@ body.dark .footer-logo-light {
 .retreat-content p,
 .retreat-bottom {
     color: var(--muted);
-    font-size: 1.15rem;
+    font-size: 1.05rem;
 }
 
 .text-link {
@@ -449,16 +473,23 @@ body.dark .footer-logo-light {
 }
 
 
-/* BOOKING BANNER */
+/* BOOKING */
 
 .booking-banner {
-    padding: clamp(60px, 8vw, 110px) 5vw;
+    padding: clamp(70px, 9vw, 120px) 5vw;
     background: #1b1b19;
     color: white;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+    justify-content: center;
+    gap: 35px;
+    text-align: center;
+}
+
+.booking-content {
+    width: min(850px, 100%);
+    text-align: center;
 }
 
 .booking-banner .eyebrow {
@@ -472,7 +503,7 @@ body.dark .footer-logo-light {
 .booking-banner p:last-child {
     margin: 0;
     opacity: 0.7;
-    font-size: 1.15rem;
+    font-size: 1.05rem;
 }
 
 
@@ -497,7 +528,7 @@ body.dark .footer-logo-light {
     display: flex;
     align-items: center;
     gap: 15px;
-    font-size: 1.15rem;
+    font-size: 1.05rem;
 }
 
 .contact-link:hover {
@@ -525,7 +556,7 @@ body.dark .footer-logo-light {
 
 .contact-detail span {
     color: var(--muted);
-    font-size: 1.15rem;
+    font-size: 1.05rem;
 }
 
 .map-wrap {
@@ -675,8 +706,16 @@ body.dark .footer-logo-light {
 
 @media (max-width: 900px) {
 
+    html {
+        scroll-padding-top: 70px;
+    }
+
     .site-header {
-        padding: 12px 5vw;
+        padding: 10px 5vw;
+    }
+
+    .site-header .brand {
+        display: none;
     }
 
     .main-nav {
@@ -699,6 +738,10 @@ body.dark .footer-logo-light {
     .main-nav a {
         padding: 16px 5vw;
         border-top: 1px solid var(--line);
+    }
+
+    .mobile-home {
+        display: block;
     }
 
     .nav-book {
@@ -732,25 +775,70 @@ body.dark .footer-logo-light {
 
     .booking-banner {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
+
 }
 
 
 @media (max-width: 600px) {
 
+    html {
+        scroll-padding-top: 62px;
+    }
+
     .logo {
         width: 95px;
     }
 
-    .hero-logo {
-        width: 75vw;
+    /* HERO */
+
+    .hero {
+        min-height: 100svh;
+        height: 100svh;
     }
 
     .hero-overlay {
-    padding-top: 70px;
+        padding: 70px 18px 24px;
     }
-    
+
+    .hero-content {
+        width: min(100%, 500px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-content .eyebrow {
+        width: 100%;
+        margin: 0 0 10px;
+        font-size: clamp(0.56rem, 2.5vw, 0.72rem);
+        letter-spacing: 0.12em;
+        line-height: 1.35;
+    }
+
+    .hero-logo {
+        width: min(72vw, 300px);
+        margin: 8px auto 14px;
+    }
+
+    .hero-text {
+        width: 100%;
+        margin: 0 auto 20px;
+        font-size: clamp(0.95rem, 4vw, 1.25rem);
+        line-height: 1.4;
+    }
+
+    .hero .button {
+        margin-top: 5px;
+        padding: 11px 18px;
+        font-size: 0.72rem;
+    }
+
+
+    /* GENERAL */
+
     .section {
         padding: 70px 5vw;
     }
@@ -762,16 +850,16 @@ body.dark .footer-logo-light {
     }
 
     .section-text p {
-        font-size: 1.15rem;
+        font-size: 1.05rem;
     }
 
     .retreat-content p,
     .retreat-bottom {
-        font-size: 1.15rem;
+        font-size: 1.05rem;
     }
 
     .contact-link {
-        font-size: 1.15rem;
+        font-size: 1.05rem;
     }
 
     .photo-grid {
@@ -797,9 +885,31 @@ body.dark .footer-logo-light {
         height: 280px;
     }
 
+
+    /* BOOKING */
+
+    .booking-banner {
+        padding: 70px 5vw;
+        gap: 30px;
+    }
+
+    .booking-content {
+        width: 100%;
+    }
+
+    .booking-banner h2 {
+        font-size: 2.5rem;
+    }
+
+
+    /* RETREATS */
+
     .retreat-content {
         padding: 22px;
     }
+
+
+    /* CONTACT */
 
     .map-wrap,
     .map-link,
@@ -807,10 +917,16 @@ body.dark .footer-logo-light {
         min-height: 350px;
     }
 
+
+    /* FOOTER */
+
     .site-footer {
         flex-direction: column;
         text-align: center;
     }
+
+
+    /* LIGHTBOX */
 
     .lightbox {
         padding: 20px;
@@ -825,4 +941,5 @@ body.dark .footer-logo-light {
     .lightbox-next {
         font-size: 3rem;
     }
+
 }
