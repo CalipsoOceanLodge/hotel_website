@@ -23,7 +23,7 @@ body {
     background: var(--bg);
     color: var(--text);
     line-height: 1.65;
-    font-size: 1.05rem;
+    font-size: 1.15rem;
 }
 
 body.dark {
@@ -245,13 +245,13 @@ body.dark .footer-logo-light {
     font-family: Georgia, "Times New Roman", serif;
     font-weight: normal;
     font-size: clamp(2.3rem, 5vw, 5rem);
-    line-height: 1.05;
+    line-height: 1.15;
 }
 
 .section-text p {
     color: var(--muted);
     margin: 0 0 20px;
-    font-size: 1.05rem;
+    font-size: 1.15rem;
 }
 
 .button {
@@ -369,7 +369,7 @@ body.dark .footer-logo-light {
     max-width: 700px;
     margin: 0 auto;
     color: var(--muted);
-    font-size: 1.05rem;
+    font-size: 1.15rem;
 }
 
 .full-gallery {
@@ -428,7 +428,7 @@ body.dark .footer-logo-light {
 .retreat-content p,
 .retreat-bottom {
     color: var(--muted);
-    font-size: 1.05rem;
+    font-size: 1.15rem;
 }
 
 .text-link {
@@ -472,7 +472,7 @@ body.dark .footer-logo-light {
 .booking-banner p:last-child {
     margin: 0;
     opacity: 0.7;
-    font-size: 1.05rem;
+    font-size: 1.15rem;
 }
 
 
@@ -497,7 +497,7 @@ body.dark .footer-logo-light {
     display: flex;
     align-items: center;
     gap: 15px;
-    font-size: 1.05rem;
+    font-size: 1.15rem;
 }
 
 .contact-link:hover {
@@ -525,7 +525,7 @@ body.dark .footer-logo-light {
 
 .contact-detail span {
     color: var(--muted);
-    font-size: 1.05rem;
+    font-size: 1.15rem;
 }
 
 .map-wrap {
@@ -762,16 +762,16 @@ body.dark .footer-logo-light {
     }
 
     .section-text p {
-        font-size: 1.05rem;
+        font-size: 1.15rem;
     }
 
     .retreat-content p,
     .retreat-bottom {
-        font-size: 1.05rem;
+        font-size: 1.15rem;
     }
 
     .contact-link {
-        font-size: 1.05rem;
+        font-size: 1.15rem;
     }
 
     .photo-grid {
