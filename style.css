@@ -545,7 +545,7 @@ body.dark .footer-logo-light {
     height: 100%;
     min-height: 450px;
     border: 0;
-    filter: grayscale(0%);
+    filter: grayscale(100%);
 }
 
 .map-overlay {
