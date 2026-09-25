@@ -21,6 +21,7 @@ document.querySelectorAll(".main-nav a").forEach(link => {
 ========================= */
 
 const themeToggle = document.getElementById("theme-toggle");
+const favicon = document.getElementById("favicon");
 
 const savedTheme = localStorage.getItem("calipso-theme");
 
@@ -34,7 +35,14 @@ function updateThemeIcon() {
         : "☾";
 }
 
+function updateFavicon() {
+    favicon.href = document.body.classList.contains("dark")
+        ? "images/logo_white.png"
+        : "images/logo_black.png";
+}
+
 updateThemeIcon();
+updateFavicon();
 
 themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark");
@@ -45,7 +53,10 @@ themeToggle.addEventListener("click", () => {
 
     localStorage.setItem("calipso-theme", theme);
     updateThemeIcon();
+    updateFavicon();
 });
+```
+
 
 
 /* =========================
