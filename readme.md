@@ -39,4 +39,9 @@ Built as a lightweight static website using:
 
 ---
 
+### Website by Dakota P.
+
+LinkedIn: https://www.linkedin.com/in/dakotaprice/
+Email: [dakotalaneprice@gmail.com](mailto:dakotalaneprice@gmail.com)
+
 © Calipso Ocean Lodge
